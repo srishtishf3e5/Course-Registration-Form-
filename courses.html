@@ -1,0 +1,33 @@
+{% extends "base.html" %}**
+{% block content %}
+  <h2>Available Courses</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Title</th>
+        <th>Credits</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in courses %}
+        <tr>
+          <td>{{ c.code }}</td>
+          <td>{{ c.title }}</td>
+          <td>{{ c.credits }}</td>
+          <td>
+            {% if c.is_enrolled %}
+              <span class="tag">Enrolled</span>
+            {% else %}
+              <form method="post" style="display:inline;">
+                <input type="hidden" name="course_id" value="{{ c.id }}">
+                <button type="submit" class="btn small">Register</button>
+              </form>
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

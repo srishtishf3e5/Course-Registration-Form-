@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>My Registered Courses</h2>
+  {% if courses %}
+    <table>
+      <thead>
+        <tr>
+          <th>Code</th>
+          <th>Title</th>
+          <th>Credits</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in courses %}
+          <tr>
+            <td>{{ c.code }}</td>
+            <td>{{ c.title }}</td>
+            <td>{{ c.credits }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>You have not registered for any courses yet.</p>
+  {% endif %}
+{% endblock %}

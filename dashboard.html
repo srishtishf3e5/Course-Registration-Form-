@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Dashboard</h2>
+  <p>Use the navigation bar to view all courses and manage your registrations.</p>
+  <ul>
+    <li><a href="{{ url_for('courses') }}">View & Register for Courses</a></li>
+    <li><a href="{{ url_for('my_courses') }}">View My Registered Courses</a></li>
+  </ul>
+{% endblock %}

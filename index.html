@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h1>Welcome to the Course Registration System</h1>
+  <p>This system allows students to register for available courses.</p>
+  <p>
+    <a class="btn" href="{{ url_for('register') }}">Create Account</a>
+    <a class="btn secondary" href="{{ url_for('login') }}">Login</a>
+  </p>
+{% endblock %}
